@@ -39,7 +39,7 @@ const routes = [
     //仪表盘
     path: '/dashboard',
     name: 'Dashboard',
-    // redirect: '/dashboard/analysis',
+    redirect: '/dashboard/analysis',
     component: () => import(/* webpackChunkName: "user" */ "@/layouts/BasicLayout.vue"),
     children: [
       {
@@ -52,7 +52,7 @@ const routes = [
   {
     path: '/form',
     name: 'Form',
-    redirect:'/dashboard',
+    redirect:'/form/step-form',
     component: {render : h => h('router-view')},
     children: [
       {

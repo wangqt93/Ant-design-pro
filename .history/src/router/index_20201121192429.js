@@ -39,7 +39,7 @@ const routes = [
     //仪表盘
     path: '/dashboard',
     name: 'Dashboard',
-    // redirect: '/dashboard/analysis',
+    redirect: '/dashboard/analysis',
     component: () => import(/* webpackChunkName: "user" */ "@/layouts/BasicLayout.vue"),
     children: [
       {
@@ -52,7 +52,6 @@ const routes = [
   {
     path: '/form',
     name: 'Form',
-    redirect:'/dashboard',
     component: {render : h => h('router-view')},
     children: [
       {
@@ -63,28 +62,28 @@ const routes = [
       {
         path: '/form/step-form',
         name: 'StepForm',
-        component: () => import(/* webpackChunkName: "user" */ "@/views/Forms/StepForm"),  //这里的index.vue可以省略！
+        component: () => import(/* webpackChunkName: "user" */ "@/views/Forms/StepFOORM")
         children: [
           {
             path: '/form/step-form',
             name: "stepform",
-            redirect: '/form/step-form/info',
-            component: () => import('@/views/Forms/StepForm'),
+            redirect: '/form/step-form/info'
+            component: () => import('@/views/Form/StepForm'),
             children: [
               {
-                path: '/form/step-form/info',
+                path: 'form/step-form/info',
                 name: '',
-                component: () => import('@/views/Forms/StepForm/Step1.vue')
+                component: () => import('@/views/Form/StepForm/Step1.vue')
               },
               {
-                path: '/form/step-form/confirm',
+                path: 'form/step-form/confirm',
                 name: 'confirm',
-                component: () => import('@/views/Forms/StepForm/Step2.vue')
+                component: () => import('@/view/Form/StepForm/Step2.vue')
               },
               {
-                path: '/form/step-form/result',
+                path: 'form/step-form/result',
                 name: 'result',
-                component: () => import('@/views/Forms/StepForm/Step3.vue')
+                component: () => import('@/view/Form/StepForm/Step3.vue')
               }
             ]
           }

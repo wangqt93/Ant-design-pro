@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    
-    <router-link to='/dashboard/analysis'>dashboard</router-link>
+    <router-view></router-view>
+    <router-link to='/dashboard'>dashboard</router-link>
     <br>
     <router-link to='/form'>form</router-link>
-    <router-view></router-view>
   </div>
 </template>
 

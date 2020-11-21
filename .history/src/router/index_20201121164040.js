@@ -1,8 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Notfound from "@/views/404.vue"
-import Nprogress from "nprogress"
-import "nprogress/nprogress.css"
 
 
 Vue.use(VueRouter);
@@ -39,7 +37,7 @@ const routes = [
     //仪表盘
     path: '/dashboard',
     name: 'Dashboard',
-    // redirect: '/dashboard/analysis',
+    redirect: '/dashboard/analysis',
     component: () => import(/* webpackChunkName: "user" */ "@/layouts/BasicLayout.vue"),
     children: [
       {
@@ -52,45 +50,9 @@ const routes = [
   {
     path: '/form',
     name: 'Form',
-    redirect:'/dashboard',
-    component: {render : h => h('router-view')},
+    component: () => import(/* webpackChunkName: "user" */ "@/views/Forms/BasicForm.vue"),
     children: [
-      {
-        path:'/form/basic-form',
-        name: 'basicform',
-        component: () => import(/* webpackChunkName: "user" */ "@/views/Forms/BasicForm.vue")
-      },
-      {
-        path: '/form/step-form',
-        name: 'StepForm',
-        component: () => import(/* webpackChunkName: "user" */ "@/views/Forms/StepForm"),  //这里的index.vue可以省略！
-        children: [
-          {
-            path: '/form/step-form',
-            name: "stepform",
-            redirect: '/form/step-form/info',
-            component: () => import('@/views/Forms/StepForm'),
-            children: [
-              {
-                path: '/form/step-form/info',
-                name: '',
-                component: () => import('@/views/Forms/StepForm/Step1.vue')
-              },
-              {
-                path: '/form/step-form/confirm',
-                name: 'confirm',
-                component: () => import('@/views/Forms/StepForm/Step2.vue')
-              },
-              {
-                path: '/form/step-form/result',
-                name: 'result',
-                component: () => import('@/views/Forms/StepForm/Step3.vue')
-              }
-            ]
-          }
-        ]
-      }
-
+      
     ]
   }
 ];

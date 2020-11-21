@@ -39,7 +39,7 @@ const routes = [
     //仪表盘
     path: '/dashboard',
     name: 'Dashboard',
-    // redirect: '/dashboard/analysis',
+    redirect: '/dashboard/analysis',
     component: () => import(/* webpackChunkName: "user" */ "@/layouts/BasicLayout.vue"),
     children: [
       {

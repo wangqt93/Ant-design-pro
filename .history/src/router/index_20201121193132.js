@@ -39,7 +39,7 @@ const routes = [
     //仪表盘
     path: '/dashboard',
     name: 'Dashboard',
-    // redirect: '/dashboard/analysis',
+    redirect: '/dashboard/analysis',
     component: () => import(/* webpackChunkName: "user" */ "@/layouts/BasicLayout.vue"),
     children: [
       {
@@ -52,7 +52,6 @@ const routes = [
   {
     path: '/form',
     name: 'Form',
-    redirect:'/dashboard',
     component: {render : h => h('router-view')},
     children: [
       {
@@ -63,7 +62,7 @@ const routes = [
       {
         path: '/form/step-form',
         name: 'StepForm',
-        component: () => import(/* webpackChunkName: "user" */ "@/views/Forms/StepForm"),  //这里的index.vue可以省略！
+        component: () => import(/* webpackChunkName: "user" */ "@/views/Forms/StepForm/index.vue"),
         children: [
           {
             path: '/form/step-form',
