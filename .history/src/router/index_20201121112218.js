@@ -8,21 +8,20 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    redirect: '/user/login'
+    redirect: '/user'
   },
   {
     path: '/user',
     component: () => import(/* webpackChunkName: "user" */ "@/views/User/User.vue"),
     name: 'User',
-    redirect: '/user/login',
     children: [
       {
-        path: '/user/login',
+        path: '/login',
         component: () => import(/* webpackChunkName: "user" */ "@/views/User/Login.vue"),
         name: 'Login'
       },
       {
-        path: '/user/register',
+        path: '/register',
         component: () => import(/* webpackChunkName: "user" */ "@/views/User/Register.vue"),
         name: 'Register'
       }
