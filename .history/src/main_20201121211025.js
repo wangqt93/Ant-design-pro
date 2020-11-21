@@ -3,11 +3,11 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import { Layout }  from "ant-design-vue"
+// import {Layout} from "ant-design-vue"
 
 Vue.config.productionTip = false;
 
-Vue.use(Layout)
+// Vue.use(Layout)
 
 new Vue({
   router,

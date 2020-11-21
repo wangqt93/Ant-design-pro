@@ -1,12 +1,10 @@
 <template>
     <div>
         <a-layout id="components-layout-demo-side" style="min-height: 100vh">
-
             <a-layout-sider v-model="collapsed" collapsible>
                 <div class="logo" />
                 <SiderMenu/>
             </a-layout-sider>
-
             <a-layout>
                 <a-layout-header style="background: #fff; padding: 0">
                     <Header/>
@@ -44,10 +42,3 @@
         }
     }
 </script>
-<style scoped>
-    #components-layout-demo-side .logo {
-        height: 32px;
-        background: rgba(255, 255, 255, 0.2);
-        margin: 16px;
-    }
-</style>
