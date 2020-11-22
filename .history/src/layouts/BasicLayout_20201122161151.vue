@@ -77,12 +77,4 @@
     .trigger:hover {
         
     }
-    .logo {
-        background: #eee;
-    }
-    .nav-theme-dark >>> .logo{
-        color: #fff;
-        text-align: center;
-        overflow: hidden;
-    }
 </style>

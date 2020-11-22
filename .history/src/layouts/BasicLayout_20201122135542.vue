@@ -1,16 +1,9 @@
 <template>
-    <div :class="[`nav-theme-${navTheme}`, `nav-layout-${navLayout}`]">
+    <div>
         <a-layout id="components-layout-demo-side" style="min-height: 100vh">
 
-            <a-layout-sider 
-                v-if="navLayout === 'left'"
-                :theme="navTheme"
-                v-model="collapsed" 
-                :trigger="null" 
-                collapsible
-                
-            >
-                <div class="logo" >Ant Design Vue Pro</div>
+            <a-layout-sider v-model="collapsed" :trigger="null" collapsible>
+                <div class="logo" />
                 <SiderMenu/>
             </a-layout-sider>
 
@@ -26,40 +19,29 @@
 
                 <a-layout-footer style="text-align: center">
                     <Footer/> 
-                    
                 </a-layout-footer>
-
             </a-layout>
-            
         </a-layout>
-        <Drawer/>
+        
+        
+        
+        
     </div>
 </template>
 <script>
     import Header from './Header';
     import Footer from './Footer';
     import SiderMenu from './SiderMenu';
-    import Drawer from '@/components/SettingDrawer';
-
     export default {
         data() {
             return {
                 collapsed: false,    //菜单栏是否折叠
             }
         },
-        computed: {
-            navTheme() {
-                return this.$route.query.navTheme || 'dark'
-            },
-            navLayout(){
-                return this.$route.query.navLayout || 'left'
-            }
-        },
         components: {
             Header,
             Footer,
-            SiderMenu,
-            Drawer
+            SiderMenu
         }
     }
 </script>
@@ -72,17 +54,8 @@
     .trigger {
         padding: 0 20px;
         line-height: 64px;
-        font-size: 20px;
     }
     .trigger:hover {
         
-    }
-    .logo {
-        background: #eee;
-    }
-    .nav-theme-dark >>> .logo{
-        color: #fff;
-        text-align: center;
-        overflow: hidden;
     }
 </style>

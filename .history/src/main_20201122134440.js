@@ -3,18 +3,13 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import { Layout,Icon,Drawer,Radio}  from "ant-design-vue";
+import { Layout,Icon}  from "ant-design-vue";
 import "ant-design-vue/lib/layout/style/css";
-import "ant-design-vue/lib/drawer/style/css";
-import "ant-design-vue/lib/icon/style/css";
-import "ant-design-vue/lib/radio/style/css";
 
 Vue.config.productionTip = false;
 
 Vue.use(Layout)
 Vue.use(Icon)
-Vue.use(Drawer)
-Vue.use(Radio)
 
 new Vue({
   router,

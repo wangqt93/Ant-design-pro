@@ -14,7 +14,6 @@ Vue.config.productionTip = false;
 Vue.use(Layout)
 Vue.use(Icon)
 Vue.use(Drawer)
-Vue.use(Radio)
 
 new Vue({
   router,

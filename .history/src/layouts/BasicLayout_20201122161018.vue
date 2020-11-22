@@ -8,7 +8,7 @@
                 v-model="collapsed" 
                 :trigger="null" 
                 collapsible
-                
+               
             >
                 <div class="logo" >Ant Design Vue Pro</div>
                 <SiderMenu/>
@@ -76,13 +76,5 @@
     }
     .trigger:hover {
         
-    }
-    .logo {
-        background: #eee;
-    }
-    .nav-theme-dark >>> .logo{
-        color: #fff;
-        text-align: center;
-        overflow: hidden;
     }
 </style>
